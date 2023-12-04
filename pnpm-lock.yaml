@@ -29,6 +29,9 @@ dependencies:
   '@strapi/typescript-utils':
     specifier: ^4.15.4
     version: 4.15.5
+  '@strapi/utils':
+    specifier: ^4.15.5
+    version: 4.15.5
   pg:
     specifier: 8.8.0
     version: 8.8.0
