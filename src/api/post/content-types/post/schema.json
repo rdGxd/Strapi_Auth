@@ -13,10 +13,21 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 150
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "minLength": 3
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "posts"
     }
   }
 }
