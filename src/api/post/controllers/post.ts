@@ -4,20 +4,22 @@
 
 import { factories } from "@strapi/strapi";
 
-export default factories.createCoreService("api::post.post", {
+export default factories.createCoreService("api::post.post", ({ strapi }) => ({
   // Autenticação do usuário com o post
   async create(ctx: any) {
-    const { id } = ctx.state.user;
+    const user = ctx.state.user.id;
     const { title, content } = ctx.request.body.data;
     const publishedAt = new Date();
-    const post = { title, content, user: id, publishedAt };
+    const data = { title, content, user, publishedAt };
 
-    const response = await super.create({
-      data: {
-        post,
-      },
-    });
-    return response;
+    return strapi.query("api::post.post").create({ data });
+  },
+
+  // Buscando posts de apenas um usuário
+  async find(ctx) {
+    const query = { ...ctx.query, user: ctx.state.user.id };
+
+    return strapi.query("api::post.post").findMany({ where: query });
   },
 
   // Contador de Posts
@@ -25,6 +27,4 @@ export default factories.createCoreService("api::post.post", {
     const { query } = ctx.request;
     return strapi.query("api::post.post").count({ where: query });
   },
-});
-
-
+}));
