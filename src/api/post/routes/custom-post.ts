@@ -25,6 +25,22 @@ export default {
       },
     },
     {
+      method: "PUT",
+      path: "/posts/:id",
+      handler: "post.update",
+      config: {
+        policies: ["global::is-logged-in"],
+      },
+    },
+    {
+      method: "DELETE",
+      path: "/posts/:id",
+      handler: "post.delete",
+      config: {
+        policies: ["global::is-logged-in"],
+      },
+    },
+    {
       method: "GET",
       path: "/posts",
       handler: "post.create",

@@ -24,7 +24,28 @@ export default factories.createCoreService("api::post.post", ({ strapi }) => ({
   // Buscando apenas um Post do usuário
   async findOne(ctx) {
     const { id } = ctx.params;
-    return strapi.query("api::post.post").findOne({ where: { id, user: ctx.state.user.id } });
+    return strapi
+      .query("api::post.post")
+      .findOne({ where: { id, user: ctx.state.user.id } });
+  },
+
+  // Atualizando informações do post
+  async update(ctx) {
+    const user = ctx.state.user.id;
+    const { title, content } = ctx.request.body.data;
+    const updateAt = new Date();
+    const data = { title, content, user, updateAt };
+    const { id } = ctx.params;
+
+    return strapi.query("api::post.post").update({ where: { id, user }, data });
+  },
+
+  // Deletando post
+  async delete(ctx) {
+    const user = ctx.state.user.id;
+    const { id } = ctx.params;
+
+    return strapi.query("api::post.post").delete({ where: { id, user } });
   },
 
   // Contador de Posts do usuário
