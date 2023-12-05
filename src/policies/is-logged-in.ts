@@ -1,4 +1,4 @@
-export default (policyContext, config, {strapi}) => {
+export default (policyContext) => {
   if (policyContext.state.user) {
     return true;
   }
