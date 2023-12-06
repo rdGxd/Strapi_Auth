@@ -29,9 +29,6 @@ dependencies:
   '@strapi/typescript-utils':
     specifier: ^4.15.4
     version: 4.15.5
-  '@strapi/utils':
-    specifier: ^4.15.5
-    version: 4.15.5
   pg:
     specifier: 8.8.0
     version: 8.8.0
@@ -47,6 +44,9 @@ dependencies:
   strapi-plugin-populate-deep:
     specifier: ^3.0.1
     version: 3.0.1
+  strapi-provider-email-smtp:
+    specifier: ^1.0.3
+    version: 1.0.3
   styled-components:
     specifier: 5.3.3
     version: 5.3.3(@babel/core@7.23.5)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
@@ -8364,6 +8364,11 @@ packages:
       nodemailer-fetch: 1.6.0
     dev: false
 
+  /nodemailer@6.9.7:
+    resolution: {integrity: sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw==}
+    engines: {node: '>=6.0.0'}
+    dev: false
+
   /noms@0.0.0:
     resolution: {integrity: sha512-lNDU9VJaOPxUmXcLb+HQFeUgQQPtMI24Gt6hgfuMHRJgMRHMF/qZ4HJD3GDru4sSw9IQl2jPjAYnQrdIeLbwow==}
     dependencies:
@@ -10296,6 +10301,13 @@ packages:
   /strapi-plugin-populate-deep@3.0.1:
     resolution: {integrity: sha512-7t1bPPBN1AGKZlFT/6qsqmwgd7SzTA9CNzEBSzeYEjL/e0GKD2lf4wF11C2vMkfsQW2GhRAXZQRCGlLnV2XHFQ==}
     engines: {node: '>=14.19.1 <=20.x.x', npm: '>=6.0.0'}
+    dev: false
+
+  /strapi-provider-email-smtp@1.0.3:
+    resolution: {integrity: sha512-f66dyyWygzLmxHuzQfiPjX6vSZE/y2za4bwYBRKWkSeLu7WyVnwJ8xyfnleHXWhan7Xmo2QRoFfUOq367su0Rw==}
+    dependencies:
+      lodash: 4.17.21
+      nodemailer: 6.9.7
     dev: false
 
   /stream-chain@2.2.5:

@@ -1,5 +1,6 @@
 /**
  * post controller
+ * mrwf brhy eugj zuvv
  */
 
 import { factories } from "@strapi/strapi";
@@ -8,7 +9,8 @@ export default factories.createCoreService("api::post.post", ({ strapi }) => ({
   // Autenticação do usuário com o post
   async create(ctx: any) {
     const { title, content } = ctx.request.body.data;
-    const data = { title, content, user: ctx.state.user.id };
+    const publishedAt = new Date();
+    const data = { title, content, user: ctx.state.user.id, publishedAt };
 
     return strapi.query("api::post.post").create({ data });
   },
