@@ -18,19 +18,19 @@ module.exports = ({ env }) => ({
     config: {
       provider: "strapi-provider-email-smtp",
       providerOptions: {
-        host: "smtp.gmail.com", //SMTP Host
-        port: 465, //SMTP Port
+        host: env("SMTP_HOST"),
+        port: env("SMTP_PORT"),
         secure: true,
-        username: env("SMTP_EMAIL_USER_NAME_APP"),
-        password: env("SMTP_EMAIL_PASSWORD_APP"),
+        username: env("SMTP_USERNAME_APP"),
+        password: env("SMTP_PASSWORD_APP"),
         rejectUnauthorized: true,
         requireTLS: true,
         connectionTimeout: 1,
       },
     },
     settings: {
-      defaultFrom: env("SMTP_EMAIL_USER_NAME_APP"),
-      defaultReplyTo: env("SMTP_EMAIL_USER_NAME_APP"),
+      defaultFrom: env("SMTP_FROM"),
+      defaultReplyTo: env("SMTP_REPLY_TO"),
     },
   },
   // ...
