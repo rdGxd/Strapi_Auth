@@ -1,4 +1,4 @@
-# Projeto de Blog pessoal para consumir uma [API](https://github.com/rdGxd/Strapi_Auth) com NextJS
+# Projeto de API para autenticação do usuario consumida no [FrontEnd](https://github.com/rdGxd/FrontEnd_Strapi_Auth_With_Next.JS_and_NextAuth.JS)
 
 ## Tecnologias utilizadas
 
