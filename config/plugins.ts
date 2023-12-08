@@ -33,5 +33,12 @@ module.exports = ({ env }) => ({
       defaultReplyTo: env("SMTP_REPLY_TO"),
     },
   },
+  "users-permissions": {
+    config: {
+      jwt: {
+        expiresIn: "7d",
+      },
+    },
+  },
   // ...
 });
